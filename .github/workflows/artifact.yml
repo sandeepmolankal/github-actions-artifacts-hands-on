@@ -18,9 +18,12 @@ jobs:
       with:
         name: hello-artifact
         path: hello.txt
+
     - name: download 
       uses: actions/download-artifact@v5
       with:
-        name: hello.tx
-        path: cat ./artifacts/hello.txt
-     
+        name: hello-artifact
+        path: ./artifacts
+    
+    - name: Show file content
+      run: cat ./artifacts/hello.txt
