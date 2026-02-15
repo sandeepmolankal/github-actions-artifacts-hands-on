@@ -18,7 +18,11 @@ jobs:
       with:
         name: hello-artifact
         path: hello.txt
-
+  job_2:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps: 
     - name: download 
       uses: actions/download-artifact@v5
       with:
